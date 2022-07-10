@@ -39,6 +39,9 @@
                                                 <state key="normal" image="magnifyingglass" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="didTappedSearchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MGN-jp-7ia"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -114,6 +117,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="JOE-O1-MGO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5gN-NE-CdU"/>
                             <constraint firstItem="JOE-O1-MGO" firstAttribute="top" secondItem="9sZ-xM-t3I" secondAttribute="bottom" id="7nj-hs-fZA"/>
@@ -126,9 +130,26 @@
                             <constraint firstItem="582-4F-rx7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="rY5-S6-IZe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="582-4F-rx7" secondAttribute="trailing" constant="40" id="tzk-K1-Hel"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="6NN-mN-HBK" appends="YES" id="o6x-mJ-ViA"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="meaningLabel" destination="582-4F-rx7" id="T1J-DO-KVe"/>
+                        <outlet property="searchTextField" destination="ho5-4V-XNh" id="3N2-iW-s0K"/>
+                        <outlet property="searchView" destination="Zdm-xv-6En" id="vI5-Cs-CDh"/>
+                        <outletCollection property="tagButtons" destination="bRc-fq-uAw" collectionClass="NSMutableArray" id="6Pt-I1-0Nk"/>
+                        <outletCollection property="tagButtons" destination="Dpq-Ck-3g2" collectionClass="NSMutableArray" id="dPQ-BL-hyg"/>
+                        <outletCollection property="tagButtons" destination="A2T-0G-cPa" collectionClass="NSMutableArray" id="hn1-Nf-MYa"/>
+                        <outletCollection property="tagButtons" destination="RJN-oh-4IS" collectionClass="NSMutableArray" id="Ysm-3B-qAD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6NN-mN-HBK">
+                    <connections>
+                        <action selector="didTappedTotalView:" destination="BYZ-38-t0r" id="NpI-Ck-xuh"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="79.6875"/>
         </scene>
