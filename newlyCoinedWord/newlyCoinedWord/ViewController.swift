@@ -15,7 +15,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         "실매": "실시간 매니저",
         "만반잘부": "만나서 반가워.\n잘 부탁해",
         "꾸안꾸": "꾸민 듯\n안 꾸민 듯",
-        
+        "점메추": "점심 메뉴 추천",
+        "캘박": "캘린더 박제",
+        "웃안웃": "웃긴데 안 웃겨"
     ]
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchTextField: UITextField!
@@ -25,8 +27,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegate()
         setSearchView()
-        setTagButton()
+        setTagButton(borderWidth: 1, borderColor: .black, cornerRadius: 7)
     }
     
     //MARK: - Action
@@ -53,11 +56,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         searchView.layer.borderColor = UIColor.black.cgColor
     }
     
-    private func setTagButton() {
+    private func setTagButton(borderWidth: CGFloat, borderColor: UIColor, cornerRadius: CGFloat) {
         for button in tagButtons {
-            button.layer.borderWidth = 1
-            button.layer.borderColor = UIColor.black.cgColor
-            button.layer.cornerRadius = 7
+            button.layer.borderWidth = borderWidth
+            button.layer.borderColor = borderColor.cgColor
+            button.layer.cornerRadius = cornerRadius
         }
     }
     
