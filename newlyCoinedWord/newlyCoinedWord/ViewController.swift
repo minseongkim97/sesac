@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController {
     //MARK: - Properties
     let newlyWord = [
         "삼귀자": "연애를 시작하기 전 썸 단계!",
@@ -27,7 +27,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDelegate()
         setSearchView()
         setTagButton(borderWidth: 1, borderColor: .black, cornerRadius: 7)
     }
@@ -41,16 +40,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    @IBAction func didTappedReturnKey(_ sender: UITextField) {
         searchNewlyWord()
-        return true
     }
     
     //MARK: - Helpers
-    private func setDelegate() {
-        searchTextField.delegate = self
-    }
-    
     private func setSearchView() {
         searchView.layer.borderWidth = 2
         searchView.layer.borderColor = UIColor.black.cgColor

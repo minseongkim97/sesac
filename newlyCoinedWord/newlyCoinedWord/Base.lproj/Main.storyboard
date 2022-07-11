@@ -27,6 +27,9 @@
                                                 <rect key="frame" x="10" y="0.0" width="304" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                <connections>
+                                                    <action selector="didTappedReturnKey:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="x6L-fy-thU"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwN-Sw-N4a">
                                                 <rect key="frame" x="324" y="0.0" width="50" height="50"/>
