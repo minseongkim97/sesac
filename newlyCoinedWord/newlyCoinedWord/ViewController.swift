@@ -45,6 +45,13 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Helpers
+    private func findMeaning(word: String) -> String {
+        if let meaning = newlyWord[word] {
+            return meaning
+        }
+        return "신조어 사전에 등록되어 있지 않은 단어입니다."
+    }
+    
     private func setSearchView() {
         searchView.layer.borderWidth = 2
         searchView.layer.borderColor = UIColor.black.cgColor
@@ -60,7 +67,7 @@ class ViewController: UIViewController {
     
     private func searchNewlyWord() {
         if let word = searchTextField.text {
-            meaningLabel.text = newlyWord[word] == nil ? "신조어 사전에 등록되어 있지 않은 단어입니다." : newlyWord[word]!
+            meaningLabel.text = findMeaning(word: word)
         }
         self.view.endEditing(true)
     }
